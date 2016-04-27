@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'slim-rails'
 
 group :development, :test do
+  gem 'rails-controller-testing'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5.0.beta2'
   gem 'factory_girl_rails'
