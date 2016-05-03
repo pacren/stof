@@ -12,6 +12,9 @@ gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 
 gem 'slim-rails'
+gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
+gem 'simple_form'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
   gem 'rails-controller-testing'
@@ -31,6 +34,8 @@ end
 
 group :test do
   gem 'shoulda-matchers', '~> 3.1', require: false
+  gem 'capybara'
+  gem 'launchy'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
