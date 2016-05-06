@@ -1,0 +1,5 @@
+p=@question.title
+p=@question.body
+-if @question.user == current_user
+  p=link_to 'Edit question', edit_question_path
+  p=link_to 'Delete question', question_path, method: :delete
