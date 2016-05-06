@@ -10,7 +10,7 @@ feature 'Create question' do
     click_on 'Ask question'
 
     fill_in 'Title', with: 'Test question'
-    fill_in 'Body', with: 'text'
+    fill_in 'Body', with: 'Question text'
     click_on 'Create'
 
     expect(page).to have_content 'Your question suscefully created'

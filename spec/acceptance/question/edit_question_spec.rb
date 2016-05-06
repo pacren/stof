@@ -19,12 +19,12 @@ feature 'Question editing' do
 
     scenario 'try to edit his question' do
       click_on 'Edit question'
-      fill_in 'Title', with: 'New title'
-      fill_in 'Body', with: 'New body'
+      fill_in 'Title', with: 'New question title'
+      fill_in 'Body', with: 'New question body'
       click_on 'Save'
 
-      expect(page).to have_content 'New title'
-      expect(page).to have_content 'New body'
+      expect(page).to have_content 'New question title'
+      expect(page).to have_content 'New question body'
     end
 
     scenario "try to update with blank fields" do

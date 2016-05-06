@@ -9,7 +9,7 @@ feature 'User can browsing all questuion' do
     click_on 'Ask question'
 
     fill_in 'Title', with: 'Test question'
-    fill_in 'Body', with: 'text'
+    fill_in 'Body', with: 'Question text'
     click_on 'Create'
     visit questions_path
 
