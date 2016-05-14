@@ -15,6 +15,7 @@ gem 'slim-rails'
 gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootswatch-rails'
 
 group :development, :test do
   gem 'rails-controller-testing'
