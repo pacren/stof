@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title
+      | Stof
+    = csrf_meta_tags
+    = action_cable_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+  body
+    - flash.each do |key, value|
+      div class="alert alert-#{key}"
+        =value
+    = render 'layouts/partials/navbar'
+    .container
+      = yield
