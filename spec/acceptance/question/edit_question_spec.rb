@@ -33,7 +33,7 @@ feature 'Question editing' do
       fill_in 'Body', with: ''
       click_on 'Save'
 
-      expect(page).to have_content "can't be blank"
+      expect(page).to have_content "too short"
     end
 
     scenario "try to edit other user's question" do
