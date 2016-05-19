@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe QuestionsController, type: :controller do
   let(:user) { create(:user) }
   let(:question) { create(:question, user: user) }
+  #let(:answer) { create(:answer, question: question, user: user) }
 
   describe 'GET #index' do
     let(:questions) { create_list(:question, 2) }
@@ -27,6 +28,10 @@ RSpec.describe QuestionsController, type: :controller do
 
     it 'the requested question to @question' do
       assert_equal question, assigns(:question)
+    end
+
+    it 'assigns new answer for question' do
+      expect(assigns(:answer)).to be_a_new(Answer)
     end
 
     it 'render show view' do
