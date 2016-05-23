@@ -22,6 +22,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5.0.beta2'
   gem 'factory_girl_rails'
+  gem 'capybara-webkit'
 end
 
 group :development do
@@ -37,6 +38,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1', require: false
   gem 'capybara'
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
