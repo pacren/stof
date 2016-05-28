@@ -3,8 +3,14 @@ class AnswersController < ApplicationController
   before_action :load_question, only: [:create]
 
   def create
-    @answer = @question.answers.create(answer_params.merge(user: current_user))
-    redirect_to question_path(@question)
+    @answer = @question.answers.build(answer_params.merge(user: current_user))
+    respond_to do |format|
+      if @answer.save
+        format.json { render json: @answer }
+      else
+        format.json { render json: @answer.errors.full_messages, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
