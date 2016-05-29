@@ -1,4 +1,4 @@
-require 'rails_helper'
+require_relative '../feature_helper'
 
 feature 'User can browsing all questuion' do
   given(:user) { create(:user)  }

@@ -4,6 +4,6 @@
     // = devise_error_messages!
     = f.input :email, autofocus: true
     = f.input :password, autocomplete: 'off', label: "Password ( #{@minimum_password_length} characters minimum)"
-    = f.input :password_confirmation, autocomplete: 'off'
+    = f.input :password_confirmation, autocomplete: 'off', label: 'Confirmation password'
     = f.button :submit, 'Sign up'
   = render 'devise/shared/links'

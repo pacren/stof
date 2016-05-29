@@ -1,4 +1,8 @@
 .navbar
   .container
     .navbar-header
+      =link_to 'Home', root_path, class: "navbar-brand"
       =link_to 'Ask question', new_question_path, class: "navbar-brand"
+    ul.nav.navbar-nav.navbar-right
+      li =link_to 'Sign in', new_user_session_path  unless current_user
+      li =link_to 'Sign out', destroy_user_session_path, method: :delete if current_user

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.3.1'
 
 gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 gem 'pg', '~> 0.18'
@@ -16,12 +16,14 @@ gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootswatch-rails'
+gem 'skim'
 
 group :development, :test do
   gem 'rails-controller-testing'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5.0.beta2'
   gem 'factory_girl_rails'
+  gem 'capybara-webkit'
 end
 
 group :development do
@@ -37,6 +39,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1', require: false
   gem 'capybara'
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
