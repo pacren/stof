@@ -1,15 +1,15 @@
-.question_box
+.question__box
   p=@question.title
   p=@question.body
   -if @question.user == current_user
     p=link_to 'Edit question', edit_question_path
     p=link_to 'Delete question', question_path, method: :delete
 
-.answer_box
+.answer__box
   =render @question.answers
 - if user_signed_in?
-  .answer_form
-    .answer_errors
+  .answer__form
+    .answer__errors
     =simple_form_for [@question, @answer], remote: true do |f|
       =f.input :body, as: :text, label: 'Your answer'
       =f.button :submit, 'Create answer'

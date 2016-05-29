@@ -1,0 +1,15 @@
+
+.answer__item id="answer_#{@answer.id}"
+  .answer__body #{@answer.body}
+  button.answer__edit_link data-answer-id="#{@answer.id}" Edit answer
+  .answer__edit_form class="answer__edit_form#{@answer.id}"
+    form novalidate="novalidate" class="simple_form edit_answer" id="edit_answer_#{@answer.id}" action="/answers/#{@answer.id}" accept-charset="UTF-8" data-remote="true" method="post"
+      input name="utf8" type="hidden" value="✓"
+      input type="hidden" name="_method" value="patch"
+      div class="form-group text required answer_body"
+        label class="text required control-label" for="answer_body"
+          abbr title="required" * 
+          | Body
+        textarea.text.required.form-control name="answer[body]" id="answer_body" Asked answer
+
+      input type="submit" name="commit" value="Save" class="btn btn-default" data-disable-with="Save"

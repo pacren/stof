@@ -1,1 +1,8 @@
-p =answer.body
+.answer__item id="answer_#{answer.id}"
+  .answer__body =answer.body
+  -if user_signed_in? && current_user == answer.user
+    button.answer__edit_link data-answer-id="#{answer.id}" Edit answer
+    .answer__edit_form class="answer__edit_form#{answer.id}"
+      =simple_form_for answer, remote: true do |f|
+        =f.input :body, as: :text
+        =f.button :submit, 'Save'
