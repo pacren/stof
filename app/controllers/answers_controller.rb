@@ -24,6 +24,11 @@ class AnswersController < ApplicationController
     end
   end
 
+  def destroy
+    @answer = Answer.find(params[:id])
+    @answer.destroy
+  end
+
   private
 
   def load_question

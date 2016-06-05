@@ -25,3 +25,6 @@ document.addEventListener 'turbolinks:load', ->
   $('.answer__edit_form form').bind 'ajax:success', (e, data, status, xhr) ->
     answer = $.parseJSON(xhr.responseText)
     $('#answer_' + answer.id).html(answer.body)
+
+  $('.answer__delete_link').click ->
+    $(this).parent('.answer__item').hide(200)
