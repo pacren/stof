@@ -2,6 +2,7 @@
   .answer__body =answer.body
   -if user_signed_in? && current_user == answer.user
     button.answer__edit_link data-answer-id="#{answer.id}" Edit answer
+    =link_to 'Delete answer', answer_path(answer), method: :delete, remote: true, class: 'answer__delete_link'
     .answer__edit_form class="answer__edit_form#{answer.id}"
       =simple_form_for answer, remote: true do |f|
         =f.input :body, as: :text

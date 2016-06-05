@@ -50,10 +50,20 @@ RSpec.describe AnswersController, type: :controller do
     end
 
     context 'with invalid attributes' do
-      before { patch :update, params: { id:answer,question: question, answer: {body: nil}, format: :json } }
+      before { patch :update, params: { id:answer, question: question, answer: {body: nil}, format: :json } }
 
       it 'does not update answer' do
         expect(answer.body).to_not eq nil
+      end
+    end
+  end
+  describe 'DELETE destroy' do
+    context 'Authenticated user delete answer' do
+      sign_in_user
+
+      it 'delete answer from database' do
+        answer
+        expect { delete :destroy, params: { id: answer } }.to change(Answer, :count).by(-1)
       end
     end
   end
